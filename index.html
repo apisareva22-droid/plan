@@ -50,13 +50,20 @@
   .instructions b { color:var(--text); }
   .legend-dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:middle; }
 
-  .table-wrap { background:var(--panel); border:1px solid var(--border); border-radius:16px; overflow-x:auto; box-shadow:0 8px 30px rgba(0,0,0,0.35); }
+  .table-wrap { background:var(--panel); border:1px solid var(--border); border-radius:16px; overflow: auto; max-height: 75vh; box-shadow: 0 8px 30px rgba(0,0,0,0.35); }
   table { border-collapse:collapse; width:100%; min-width:1400px; }
-  thead th { position:sticky; top:0; z-index:3; background:#1a2135; color:var(--text); font-size:11px; padding:8px 5px; border-bottom:2px solid var(--border); text-align:center; white-space:nowrap; }
-  thead th.task-col { text-align:left; min-width:260px; position:sticky; left:0; z-index:4; background:#1a2135; }
+  thead th {
+    position: sticky; top: 0; z-index: 3; background: #1a2135; color: var(--text);
+    font-size: 11px; padding: 8px 5px; border-bottom: 2px solid var(--border);
+    border-right: 1px solid var(--border);
+    text-align: center; white-space: nowrap;
+}
+ thead th.task-col { text-align: left; min-width: 260px; position: sticky; left: 0; top: 0; z-index: 6; background: #1a2135; border-right: 2px solid var(--accent); }
   thead th.year-sep { border-left:2px solid var(--accent); }
-  tbody td { border-bottom:1px solid var(--border); padding:4px; text-align:center; font-size:12px; }
-  tbody td.task-name { text-align:left; min-width:260px; max-width:320px; position:sticky; left:0; background:var(--panel); font-size:12px; padding:7px 10px; }
+  tbody td { border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); padding: 4px; text-align: center; font-size: 12px; }
+
+  tbody td.task-name { text-align: left; min-width: 260px; max-width: 320px; position: sticky; left: 0; z-index: 1; background: var(--panel); font-size: 12px; padding: 7px 10px; border-right: 2px solid var(--accent); }
+
   tbody td.resp-col { min-width:120px; font-size:10.5px; color:var(--muted); text-align:left; padding-left:8px; }
   tbody tr.block-row td { text-align:left; font-weight:700; color:#fff; padding:7px 12px; font-size:12.5px; position:sticky; left:0; z-index:2; }
   tbody tr:hover td.task-name, tbody tr:hover td.resp-col { background:#202a42; }
